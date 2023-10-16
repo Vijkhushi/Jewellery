@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <script src="common.js"></script>
+</head>
+<body>
+    <header></header>
+    <!-- Your main content here -->
+    <footer></footer>
+</body>
+</html>
+// common.js
+document.addEventListener("DOMContentLoaded", function() {
+    fetch("header.html")
+        .then(response => response.text())
+        .then(header => {
+            document.querySelector("header").innerHTML = header;
+        });
+
+    fetch("footer.html")
+        .then(response => response.text())
+        .then(footer => {
+            document.querySelector("footer").innerHTML = footer;
+        });
+});
